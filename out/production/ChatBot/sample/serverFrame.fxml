@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ServerController">
+   <bottom>
+      <FlowPane alignment="CENTER" prefHeight="79.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+         <children>
+            <BorderPane fx:id="attachPane" prefHeight="50.0" prefWidth="50.0" style="-fx-background-radius: 45; -fx-border-radius: 45;">
+               <center>
+                  <ImageView fx:id="attachButton" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                     <image>
+                        <Image url="@../images/attachment.png" />
+                     </image>
+                  </ImageView>
+               </center>
+            </BorderPane>
+            <AnchorPane prefHeight="52.0" prefWidth="12.0" />
+            <JFXTextArea fx:id="messageField" focusColor="WHITE" prefHeight="50.0" prefWidth="400.0" promptText="Type a message" style="-fx-background-radius: 45; -fx-border-radius: 45; -fx-border-color: #000000;" unFocusColor="WHITE" wrapText="true">
+               <padding>
+                  <Insets left="20.0" right="15.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </JFXTextArea>
+            <AnchorPane prefHeight="52.0" prefWidth="12.0" />
+            <Button fx:id="serverButton" contentDisplay="CENTER" graphicTextGap="2.0" mnemonicParsing="false" onMouseEntered="#serverMouseEntered" onMouseExited="#serverMouseExited" prefHeight="50.0" prefWidth="105.0" text="SEND">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </FlowPane>
+   </bottom>
+   <center>
+      <JFXListView fx:id="listView" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+         </BorderPane.margin>
+      </JFXListView>
+   </center>
+   <top>
+      <VBox prefHeight="104.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <FlowPane alignment="CENTER_RIGHT" columnHalignment="RIGHT" prefHeight="70.0" prefWidth="600.0" rowValignment="BOTTOM">
+               <children>
+                  <Label text="[ SERVER ]">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane prefHeight="30.0" prefWidth="40.0" />
+                  <Button fx:id="closeButton" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" style="-fx-background-radius: 45; -fx-border-radius: 45;" text="X" />
+                  <AnchorPane prefHeight="30.0" prefWidth="10.0" />
+               </children>
+            </FlowPane>
+            <FlowPane alignment="CENTER" prefHeight="80.0" prefWidth="600.0" style="-fx-background-color: #ffffff;">
+               <children>
+                  <TextField fx:id="ipAddressField" alignment="CENTER" prefHeight="50.0" prefWidth="280.0" style="-fx-background-radius: 45; -fx-border-radius: 45;" text="127.0.0.1">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <AnchorPane prefHeight="52.0" prefWidth="12.0" />
+                  <TextField fx:id="portField" alignment="CENTER" prefHeight="50.0" prefWidth="135.0" style="-fx-background-radius: 45; -fx-border-radius: 45;" text="8003">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <AnchorPane prefHeight="52.0" prefWidth="12.0" />
+                  <Button fx:id="connectButton" contentDisplay="CENTER" graphicTextGap="2.0" mnemonicParsing="false" onMouseEntered="#connectMouseEntered" onMouseExited="#connectMouseExited" prefHeight="50.0" prefWidth="135.0" text="CONNECT">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </FlowPane>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>
