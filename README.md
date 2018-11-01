@@ -11,6 +11,7 @@
 * Run client.main
 * Press connect button which is on top-right of server
 * Press connect button which is on top-right of client
+* Now , users can send messages just by entering messages and pressing send button 
 * Feel free to use our SecureChatApplication
 
 ## Screenshot
